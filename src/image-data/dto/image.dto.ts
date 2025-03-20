@@ -10,8 +10,4 @@ export class ImageDTO {
     @IsNotEmpty()
     @IsString()
     fileName!: string;
-
-    @IsNotEmpty()
-    @IsUrl({}, { message: 'La URL proporcionada no es válida' })
-    url!: string;
 }
