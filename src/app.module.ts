@@ -12,11 +12,11 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       "type": "mysql",
-      "host": process.env.DB_HOST,
-      "port": 3308,
-      "username": process.env.DB_USERNAME,
-      "password": process.env.DB_PASSWORD,
-      "database": process.env.DB_NAME,
+      "host": "srv1281.hstgr.io",
+      "port": 3306,
+      "username": "u177516757_bisteciaUser",
+      "password": "21$jOs5Xz#",
+      "database": "u177516757_adminbistecia",
       "entities": ["dist/**/*.entity{.ts,.js}"],
       "synchronize": true
     }),
@@ -27,5 +27,5 @@ import { ConfigModule } from '@nestjs/config';
   controllers: [AppController],
   providers: [AppService]
 })
-export class AppModule {}
+export class AppModule { }
 
