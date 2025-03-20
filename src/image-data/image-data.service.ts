@@ -14,7 +14,7 @@ export class ImageDataService {
         const newImage = new Image();
         newImage.fileName = file.originalname;
         newImage.imageData = file.buffer;
-        newImage.url = `http://localhost:3000/images/${file.originalname}`;
+        // newImage.url = `http://localhost:3000/images/${file.originalname}`;
 
         return this.imageRepository.save(newImage);
     }

@@ -9,9 +9,6 @@ export class Image {
     @Column({ type: String, nullable: false, length: 50 })
     fileName!: string;
 
-    @Column({ type: String, nullable: false, length: 100})
-    url!: string;
-
     @Column({ type: "longblob"})
     imageData!: Buffer;
 }
