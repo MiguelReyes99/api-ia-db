@@ -31,6 +31,15 @@ export class ImageDataService {
         };
     }
 
+    async getAllImages(): Promise<{ id: number, image: Buffer }[]> {
+        const imagesStored = await this.imageRepository.find();
+
+        return imagesStored.map(img => ({
+            id: img.id ?? 0,
+            image: img.imageData
+        }));
+    }
+
 
     private getMimeType(fileName: string): string {
         const extension = fileName.split(".").pop()?.toLowerCase();

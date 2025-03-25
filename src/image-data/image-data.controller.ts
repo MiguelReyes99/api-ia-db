@@ -20,6 +20,13 @@ export class ImageDataController {
         }
     }
 
+    @Get("list")
+    async getAllImages(@Res() res: Response) {
+        const imagesList = await this.imageService.getAllImages();
+        res.setHeader('Content-Type', 'application/json');
+        res.send(imagesList);
+    }
+
     @Get(":id")
     async getImage(@Param("id") id: number, @Res() res: Response) {
         try {
