@@ -1,4 +1,4 @@
-import { Controller, Get, HttpStatus, NotFoundException, Param, Post, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, NotFoundException, Param, Post, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { ImageDataService } from './image-data.service';
 import { Response, Express } from 'express';
 import { FileInterceptor } from '@nestjs/platform-express';
@@ -13,9 +13,7 @@ export class ImageDataController {
     async uploadFile(@UploadedFile() file: Express.Multer.File) {
         try {
             return await this.imageService.createImageRecord(file);
-            // res.status(HttpStatus.OK).send(response);
         } catch (error) {
-            // res.status(HttpStatus.INTERNAL_SERVER_ERROR).send(error.message);
             throw error;
         }
     }
