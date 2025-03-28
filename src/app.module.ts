@@ -28,8 +28,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       limits: { fileSize: 10 * 1024 * 1024 }, // Límite de 10MB
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService]
 })
 export class AppModule { }
 
